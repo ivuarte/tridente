@@ -1,0 +1,10 @@
+services:
+  site:
+    image: node:20-alpine
+    working_dir: /app
+    volumes:
+      - ../site:/app
+    ports:
+      - "4321:4321"
+    command: sh -c "npm install && npm run dev -- --host 0.0.0.0"
+##init local -> cd /home/ivan/tridente/site && npm run dev

@@ -1,0 +1,81 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --color-base: #0a0a0a;
+  --color-foreground: #f0f0f0;
+  --color-accent-gold: #c9a84c;
+  --color-accent-green: #4a7c59;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
+  }
+
+  body {
+    background-color: var(--color-base);
+    color: var(--color-foreground);
+    font-family: 'Inter', system-ui, sans-serif;
+    font-weight: 400;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    overflow-x: hidden;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Space Grotesk', system-ui, sans-serif;
+    font-weight: 700;
+    line-height: 1.15;
+    letter-spacing: -0.01em;
+  }
+
+  ::selection {
+    background-color: var(--color-accent-gold);
+    color: var(--color-base);
+  }
+}
+
+@layer utilities {
+  /* Fade-in / Rise-in animations (no JS libraries needed) */
+  @keyframes fade-in {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+  }
+
+  @keyframes rise-in {
+    from {
+      opacity: 0;
+      transform: translateY(24px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .animate-fade-in {
+    animation: fade-in 1s ease-out both;
+  }
+
+  .animate-rise-in {
+    animation: rise-in 0.9s ease-out both;
+  }
+
+  .animate-delay-100 { animation-delay: 0.1s; }
+  .animate-delay-200 { animation-delay: 0.25s; }
+  .animate-delay-300 { animation-delay: 0.45s; }
+  .animate-delay-400 { animation-delay: 0.65s; }
+
+  /* Subtle gold gradient utility for accents */
+  .text-gradient-gold {
+    background: linear-gradient(120deg, #c9a84c 0%, #e6c976 50%, #c9a84c 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+  }
+}
