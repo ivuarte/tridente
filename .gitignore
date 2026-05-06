@@ -27,3 +27,8 @@ Thumbs.db
 
 # Claude local settings (user-scoped)
 .claude/settings.local.json
+
+# Deploy artifacts
+tridente-deploy.zip
+deploy-broken.png
+*.local.png
